@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var cryptoSchema = new mongoose.Schema({
+var cryptidSchema = new mongoose.Schema({
   name: String,
   species: String,
   habitat: {type: String, default: 'forest'},
@@ -8,4 +8,4 @@ var cryptoSchema = new mongoose.Schema({
   vegetarian: {type: Boolean, default: true}
 });
 
-module.exports = mongoose.model('cryptid', cryptoSchema);
+module.exports = mongoose.model('cryptid', cryptidSchema);
