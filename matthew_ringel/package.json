@@ -1,0 +1,29 @@
+{
+  "name": "something_awesome",
+  "version": "0.1.0",
+  "description": "mongo backed rest API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mringel/mongo_backed_rest_api.git"
+  },
+  "author": "matthew ringel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mringel/mongo_backed_rest_api/issues"
+  },
+  "homepage": "https://github.com/mringel/mongo_backed_rest_api#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.5"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "mocha": "^2.3.3"
+  }
+}
