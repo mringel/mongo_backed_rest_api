@@ -1,5 +1,5 @@
 {
-  "name": "something_awesome",
+  "name": "crypto_zoo",
   "version": "0.1.0",
   "description": "mongo backed rest API",
   "main": "index.js",
