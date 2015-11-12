@@ -3,7 +3,7 @@
 **11 Novemeber, 2015**  
 **sea-d45-javascript**  
 
-**Submitting this before the due date.  Testing and validation are incomplete.  I will resubmit once those are done.**
+~~**Submitting this before the due date.  Testing and validation are incomplete.  I will resubmit once those are done.**~~
 
 **Updated with tests for all the basic CRUD actions.  Currently no test for my non-crud match route.  Also included some very basic validation requiring that all cryptid documents in the db have a [name] property**
 
