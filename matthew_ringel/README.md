@@ -8,3 +8,11 @@ This API is designed as a cryptid matchmaking dating service.  A sasquatch, yeti
 If a cryptid sees someone in the database they think they might be a match with they can make a GET request at api/cyptids/[their name]/[other name] and the API will check to make sure neither cryptid has rabies, are both single, and that they have at least one shared interest.  If they are a match the database updates them both to not single and puts their match's id in their partner field,
 
 Submitting this before the due date.  Testing and validation are incomplete.  I will resubmit once those are done.
+
+
+## Citations
+
+Array Intersection code used from:
+http://stackoverflow.com/questions/1885557/simplest-code-for-array-intersection-in-javascript
+
+Base code for routes and server from Tyler's code at https://github.com/codefellows/sea-d45-javascript/tree/master/week_3/nov_10_mongo_and_express/inclass_code
