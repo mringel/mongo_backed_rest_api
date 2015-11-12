@@ -23,8 +23,6 @@ cryptoRouter.get('/cryptids', function(req, res) {
   });
 });
 
-// Toy.update({}, unsetOp, { runValidators: true }, function(err) {
-
 cryptoRouter.put('/cryptids/:name', bodyParser.json(), function(req, res) {
   var cryptidData = req.body;
   Cryptid.update({name: req.params.name}, cryptidData, {runValidators: true}, function(err) {
