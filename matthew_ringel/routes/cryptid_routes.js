@@ -23,10 +23,11 @@ cryptoRouter.get('/cryptids', function(req, res) {
   });
 });
 
+// Toy.update({}, unsetOp, { runValidators: true }, function(err) {
+
 cryptoRouter.put('/cryptids/:name', bodyParser.json(), function(req, res) {
   var cryptidData = req.body;
-  // delete cryptidData.name;
-  Cryptid.update({name: req.params.name}, cryptidData, function(err) {
+  Cryptid.update({name: req.params.name}, cryptidData, {runValidators: true}, function(err) {
     if (err) return handleError(err, res);
 
     res.json({msg: 'Cryptid updated.'});

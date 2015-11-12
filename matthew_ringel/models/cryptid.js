@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var cryptidSchema = new mongoose.Schema({
-  name: String,
+  name: {type: String, required: true},
   species: String,
   habitat: {type: String, default: 'forest'},
   rabid: {type: Boolean, default: false},
