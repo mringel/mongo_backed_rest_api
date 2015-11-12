@@ -1,6 +1,6 @@
 # Single Resource REST API
 **Matthew Ringel**  
-**11 Novemeber, 2015**  
+**11 November, 2015**  
 **sea-d45-javascript**  
 
 **Submitting this before the due date.  Testing and validation are incomplete.  I will resubmit once those are done.**
