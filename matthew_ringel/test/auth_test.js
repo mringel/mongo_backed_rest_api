@@ -74,7 +74,6 @@ describe('auth', function() {
     });
 
     it('should be able authenticate with eat auth', function(done) {
-      var token2 = this.token;
       var req = {
         body: {
           token: this.token
