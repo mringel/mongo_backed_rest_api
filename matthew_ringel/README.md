@@ -6,7 +6,7 @@
 **Update 29 November**  
 Added authorization with unique username verification through basic http authorization and eat middleware.  Authorization is fully tested.
 
-Not implemented: asynchronous bcrypt for the bonus point. 
+Not implemented: asynchronous bcrypt for the bonus point.
 
 **11 November**  
 **Updated with tests for all the basic CRUD actions.  Currently no test for my non-crud match route.  Also included some very basic validation requiring that all cryptid documents in the db have a [name] property**
@@ -19,6 +19,9 @@ If a cryptid sees someone in the database they think they might be a match with 
 
 
 ## Citations
+
+MongoDB validation as suggested here (method 3):  
+http://nraj.tumblr.com/post/38706353543/handling-uniqueness-validation-in-mongomongoose
 
 Array Intersection code used from:
 http://stackoverflow.com/questions/1885557/simplest-code-for-array-intersection-in-javascript
