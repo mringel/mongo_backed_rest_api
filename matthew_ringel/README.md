@@ -1,10 +1,14 @@
 # Single Resource REST API
 **Matthew Ringel**  
-**11 Novemeber, 2015**  
+**29 November, 2015**  
 **sea-d45-javascript**  
 
-~~**Submitting this before the due date.  Testing and validation are incomplete.  I will resubmit once those are done.**~~
+**Update 29 November**  
+Added authorization with unique username verification through basic http authorization and eat middleware.  Authorization is fully tested.
 
+Not implemented: asynchronous bcrypt for the bonus point.
+
+**11 November**  
 **Updated with tests for all the basic CRUD actions.  Currently no test for my non-crud match route.  Also included some very basic validation requiring that all cryptid documents in the db have a [name] property**
 
 This API is designed as a cryptid matchmaking dating service.  A sasquatch, yeti, or abominable snowman can input their details through the POST at /api/cryptids, update their info through PUT at /api/cryptids, delete their details through DELETE at /api/cryptids/[name], and get a listing of all cryptids in the database through GET at api/cryptids.
@@ -15,6 +19,9 @@ If a cryptid sees someone in the database they think they might be a match with 
 
 
 ## Citations
+
+MongoDB validation as suggested here (method 3):  
+http://nraj.tumblr.com/post/38706353543/handling-uniqueness-validation-in-mongomongoose
 
 Array Intersection code used from:
 http://stackoverflow.com/questions/1885557/simplest-code-for-array-intersection-in-javascript

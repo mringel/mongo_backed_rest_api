@@ -3,9 +3,11 @@ var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect;
 
+process.env.MONGOLAB_URI = 'mongodb://localhost/cryptids_test';
 require(__dirname + '/../server');
 var mongoose = require('mongoose');
 var Cryptid = require(__dirname + '/../models/cryptid');
+
 
 describe('cryptid routes', function() {
   after(function(done) {
