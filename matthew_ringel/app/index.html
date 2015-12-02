@@ -7,44 +7,69 @@
 <body data-ng-app="CryptidMatchApp">
   <h1>Cryptid Match (eSasquatchHarmony)</h1>
 
-  <!-- var cryptidSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    species: String,
-    habitat: {type: String, default: 'forest'},
-    rabid: {type: Boolean, default: false},
-    vegetarian: {type: Boolean, default: true},
-    single: {type: Boolean, default: true},
-    partner: {type: String, default: null},
-    hobbies: Array
-  }); -->
-
-
   <main data-ng-controller="CryptidsController" data-ng-init="getAll()">
 		<form name="newCryptidForm" data-ng-submit="create(newCryptid)">
 			<label for="newCryptidName">Name:</label>
 				<input type="text" id="newCryptidName" required data-ng-model="newCryptid.name">
-
+      <br>
 			<label for="newCryptidSpecies">Species: </label>
 				<input type="text" id="newCryptidSpecies" data-ng-model="newCryptid.species">
-
+      <br>
 			<label for="newCryptidHabitat">Habitat: </label>
 				<input type="text" id="newCryptidHabitat" data-ng-model="newCryptid.habitat">
-
+      <br>
       <label for="newCryptidRabid">Rabid? </label>
   			<input type="boolean" id="newCryptidRabid" data-ng-model="newCryptid.rabid">
-
+      <br>
       <label for="newCryptidDiet">Vegetarian? </label>
         <input type="boolean" id="newCryptidDiet" data-ng-model="newCryptid.vegetarian">
-
+      <br>
       <label for="newCryptidHobbies">Hobbies: </label>
         <input type="text" id="newCryptidHobbies" data-ng-model="newCryptid.hobbies">
-
-
-
-
-
-			<button type="submit" data-ng-disabled="newBearForm.$invalid">Create New Bear</button>
+      <br>
+			<button type="submit" data-ng-disabled="newCryptidForm.$invalid">Create New Cryptid</button>
 		</form>
+
+    <ul id="cryptidlist">
+      <li data-ng-repeat="cryptid in cryptids">Name: {{cryptid.name}}<br>
+        Species: {{cryptid.species}}<br>
+        Habitat: {{cryptid.habitat}}<br>
+        vegetarian: {{cryptid.vegetarian}}<br>
+        Hobbies: {{cryptid.hobbies}}<br>
+        <button data-ng-if="!cryptid.editing" data-ng-click="remove(cryptid)">
+          Delete this cryptid profile</button>
+
+        <form name="CryptidForm{{cryptid._id}}" data-ng-submit="update(cryptid)" data-ng-if="cryptid.editing">
+
+          <label for="CryptidName{{cryptid._id}}">Name:</label>
+    				<input type="text" id="CryptidName{{cryptid._id}}" required data-ng-model="cryptid.name">
+          <br>
+    			<label for="CryptidSpecies{{cryptid._id}}">Species: </label>
+    				<input type="text" id="CryptidSpecies{{cryptid._id}}" data-ng-model="cryptid.species">
+          <br>
+    			<label for="CryptidHabitat{{cryptid._id}}">Habitat: </label>
+    				<input type="text" id="CryptidHabitat{{cryptid._id}}" data-ng-model="cryptid.habitat">
+          <br>
+          <label for="CryptidRabid{{cryptid._id}}">Rabid? </label>
+      			<input type="boolean" id="CryptidRabid{{cryptid._id}}" data-ng-model="cryptid.rabid">
+          <br>
+          <label for="CryptidDiet{{cryptid._id}}">Vegetarian? </label>
+            <input type="boolean" id="CryptidDiet{{cryptid._id}}" data-ng-model="cryptid.vegetarian">
+          <br>
+          <label for="CryptidHobbies{{cryptid._id}}">Hobbies: </label>
+            <input type="text" id="CryptidHobbies{{cryptid._id}}" data-ng-model="cryptid.hobbies">
+          <br>
+
+
+        <button type="submit">Update Cryptid</button>
+        <button data-ng-click="cryptid.editing = false">cancel update </button>
+  </form>
+  <button data-ng-if="!cryptid.editing" data-ng-click="cryptid.editing = true">Edit this cryptid</button>
+
+
+      </li>
+    </ul>
+
   </main>
 
 

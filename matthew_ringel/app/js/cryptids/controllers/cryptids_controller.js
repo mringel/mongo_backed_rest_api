@@ -14,6 +14,7 @@ module.exports = function(app) {
     };
 
     $scope.create = function(cryptid) {
+      cryptid.hobbies = cryptid.hobbies.split(',');
       $http.post('/api/cryptids', cryptid)
       .then(function(res) {
           $scope.cryptids.push(res.data);
@@ -25,7 +26,7 @@ module.exports = function(app) {
 
     $scope.update = function(cryptid) {
       cryptid.editing = false;
-      $http.put('/api/cryptids/' + cryptid.name, cryptid)
+      $http.put('/api/cryptids/' + cryptid._id, cryptid)
         .then(function(res) {
           console.log('cryptid updated');
         }, function(err) {
