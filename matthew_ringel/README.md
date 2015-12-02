@@ -3,6 +3,10 @@
 **29 November, 2015**  
 **sea-d45-javascript**  
 
+**Update 2 Decemeber**  
+All CRUD operations are functional.  The revert to database values upon canceling edit isn't implemented yet.  Turning in what I have before the due date.
+
+
 **Update 29 November**  
 Added authorization with unique username verification through basic http authorization and eat middleware.  Authorization is fully tested.
 
