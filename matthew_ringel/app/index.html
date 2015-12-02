@@ -4,14 +4,51 @@
   <meta charset="UTF-8">
   <title>Cryptid Love - A Matchmaking Site for Cryptids</title>
 </head>
-<body data-ng-app="cryptidlove">
-  <main data-ng-controller="NameController">
-    <h1>Cryptid Love</h1>
-    <h2>{{name}}</h2>
-    <input type="text" data-ng-model="name">
+<body data-ng-app="CryptidMatchApp">
+  <h1>Cryptid Match (eSasquatchHarmony)</h1>
 
+  <!-- var cryptidSchema = new mongoose.Schema({
+    name: {type: String, required: true},
+    species: String,
+    habitat: {type: String, default: 'forest'},
+    rabid: {type: Boolean, default: false},
+    vegetarian: {type: Boolean, default: true},
+    single: {type: Boolean, default: true},
+    partner: {type: String, default: null},
+    hobbies: Array
+  }); -->
+
+
+  <main data-ng-controller="CryptidsController" data-ng-init="getAll()">
+		<form name="newCryptidForm" data-ng-submit="create(newCryptid)">
+			<label for="newCryptidName">Name:</label>
+				<input type="text" id="newCryptidName" required data-ng-model="newCryptid.name">
+
+			<label for="newCryptidSpecies">Species: </label>
+				<input type="text" id="newCryptidSpecies" data-ng-model="newCryptid.species">
+
+			<label for="newCryptidHabitat">Habitat: </label>
+				<input type="text" id="newCryptidHabitat" data-ng-model="newCryptid.habitat">
+
+      <label for="newCryptidRabid">Rabid? </label>
+  			<input type="boolean" id="newCryptidRabid" data-ng-model="newCryptid.rabid">
+
+      <label for="newCryptidDiet">Vegetarian? </label>
+        <input type="boolean" id="newCryptidDiet" data-ng-model="newCryptid.vegetarian">
+
+      <label for="newCryptidHobbies">Hobbies: </label>
+        <input type="text" id="newCryptidHobbies" data-ng-model="newCryptid.hobbies">
+
+
+
+
+
+			<button type="submit" data-ng-disabled="newBearForm.$invalid">Create New Bear</button>
+		</form>
   </main>
-  <article><br><br>
+
+
+  <article>
     Tired of wandering the majestic pacific northwest forests alone?  Then this
     app is for you!  Find your sasquatch mate by creating a profile and
      searching for matches!  We're open to all cryptids, whether you be a
