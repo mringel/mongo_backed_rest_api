@@ -3,6 +3,10 @@
 **29 November, 2015**  
 **sea-d45-javascript**  
 
+**Update 3 Decemeber**
+Submitted with all functionality now implemented.  Canceling an update reverts to previous values.  Updating a profile will auto-update the list.
+
+
 **Update 2 Decemeber**  
 All CRUD operations are functional.  The revert to database values upon canceling edit isn't implemented yet.  Turning in what I have before the due date.
 
