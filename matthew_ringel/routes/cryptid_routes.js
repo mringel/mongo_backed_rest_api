@@ -66,7 +66,7 @@ cryptoRouter.get('/cryptids/match/:name1/:name2',bodyParser.json(), function(req
         if (err) return handleError(err, res);
         Cryptid.update({name: data2['0'].name}, data2['0'], function(err) {
           if (err) return handleError(err, res);
-          res.json({msg: 'true love.  Cryptids updated.'})
+          res.json({msg: 'true love.  Cryptids updated.'});
 
         });
       });

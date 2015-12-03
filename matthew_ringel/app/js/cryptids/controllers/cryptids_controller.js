@@ -3,6 +3,7 @@ module.exports = function(app) {
     $scope.cryptids = [];
     $scope.newCryptid = null;
     $scope.errors = [];
+    $scope.updatedCryptid = null;
 
     $scope.getAll = function() {
       $http.get('/api/cryptids')
@@ -24,11 +25,13 @@ module.exports = function(app) {
       });
     };
 
-    $scope.update = function(cryptid) {
+    $scope.update = function(cryptid, updatedCryptid) {
       cryptid.editing = false;
-      $http.put('/api/cryptids/' + cryptid._id, cryptid)
+      updatedCryptid._id = cryptid._id;
+      $http.put('/api/cryptids/' + updatedCryptid._id, updatedCryptid)
         .then(function(res) {
           console.log('cryptid updated');
+          $scope.getAll();
         }, function(err) {
           $scope.errors.push('could not get cryptid: + cryptid.name');
           console.log(err.data);
@@ -46,5 +49,10 @@ module.exports = function(app) {
           $scope.errors.push('could not delete cryptid: ' + cryptid.name);
         });
     };
+
+    $scope.cache = function(cryptid) {
+        $scope.updatedCryptid = JSON.parse(JSON.stringify(cryptid));
+    };
+
   }]);
 };
