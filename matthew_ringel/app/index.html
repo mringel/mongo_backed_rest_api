@@ -39,32 +39,35 @@
         <button data-ng-if="!cryptid.editing" data-ng-click="remove(cryptid)">
           Delete this cryptid profile</button>
 
-        <form name="CryptidForm{{cryptid._id}}" data-ng-submit="update(cryptid)" data-ng-if="cryptid.editing">
+        <form name="updateCryptidForm{{cryptid._id}}" data-ng-submit="update(cryptid, updatedCryptid)" data-ng-if="cryptid.editing">
 
-          <label for="CryptidName{{cryptid._id}}">Name:</label>
-    				<input type="text" id="CryptidName{{cryptid._id}}" required data-ng-model="cryptid.name">
+          <h3>Update Cryptid Dating Profile</h3>
+
+          <label for="updatedCryptidName{{cryptid._id}}">Name:</label>
+    				<input type="text" id="updatedCryptidName{{cryptid._id}}" required data-ng-model="updatedCryptid.name">
           <br>
-    			<label for="CryptidSpecies{{cryptid._id}}">Species: </label>
-    				<input type="text" id="CryptidSpecies{{cryptid._id}}" data-ng-model="cryptid.species">
+    			<label for="updatedCryptidSpecies{{cryptid._id}}">Species: </label>
+    				<input type="text" id="updatedCryptidSpecies{{cryptid._id}}" data-ng-model="updatedCryptid.species">
           <br>
-    			<label for="CryptidHabitat{{cryptid._id}}">Habitat: </label>
-    				<input type="text" id="CryptidHabitat{{cryptid._id}}" data-ng-model="cryptid.habitat">
+    			<label for="updatedCryptidHabitat{{cryptid._id}}">Habitat: </label>
+    				<input type="text" id="updatedCryptidHabitat{{cryptid._id}}" data-ng-model="updatedCryptid.habitat">
           <br>
-          <label for="CryptidRabid{{cryptid._id}}">Rabid? </label>
-      			<input type="boolean" id="CryptidRabid{{cryptid._id}}" data-ng-model="cryptid.rabid">
+          <label for="updatedCryptidRabid{{cryptid._id}}">Rabid? </label>
+      			<input type="boolean" id="updatedCryptidRabid{{cryptid._id}}" data-ng-model="updatedCryptid.rabid">
           <br>
-          <label for="CryptidDiet{{cryptid._id}}">Vegetarian? </label>
-            <input type="boolean" id="CryptidDiet{{cryptid._id}}" data-ng-model="cryptid.vegetarian">
+          <label for="updatedCryptidDiet{{cryptid._id}}">Vegetarian? </label>
+            <input type="boolean" id="updatedCryptidDiet{{cryptid._id}}" data-ng-model="updatedCryptid.vegetarian">
           <br>
-          <label for="CryptidHobbies{{cryptid._id}}">Hobbies: </label>
-            <input type="text" id="CryptidHobbies{{cryptid._id}}" data-ng-model="cryptid.hobbies">
+          <label for="updatedCryptidHobbies{{cryptid._id}}">Hobbies: </label>
+            <input type="text" id="updatedCryptidHobbies{{cryptid._id}}" data-ng-model="updatedCryptid.hobbies">
           <br>
 
 
-        <button type="submit">Update Cryptid</button>
-        <button data-ng-click="cryptid.editing = false">cancel update </button>
+        <button type="submit">Submit Update</button>
+
+        <button data-ng-click="cryptid.editing = false">Cancel Update </button>
   </form>
-  <button data-ng-if="!cryptid.editing" data-ng-click="cryptid.editing = true">Edit this cryptid</button>
+  <button data-ng-if="!cryptid.editing" data-ng-click = "cryptid.editing = true; cache(cryptid)">Edit this cryptid</button>
 
 
       </li>
