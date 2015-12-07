@@ -1,15 +1,41 @@
+/*notes:
+possible colors:
+dark almost black: #090401
+off-white: #e5de9e
+leaf brown: #5d1900
+forest green: #0d3600
+mushroom cap red: #e92300
+
+*/
+
+input {
+  background-color: #5d1900; 
+}
+
+.required_notification {
+  color: #e92300;
+}
+
+.newCryptid_form li {
+  border-bottom: 1px solid #5d1900;
+}
+
+.intro {
+  background-color: #5d1900;
+}
+
 h1,h2,h3 {
   font-family: 'Marmelad', sans-serif;
 }
 
 body {
-  background-color: #FFEFF0;
-
+  background-color: #090401;
+  color: #e5de9e;
 }
 
 h1 {
-  background-color: #17B23F;
-  color: #BDFFCE;
+  background-color: #0d3600;
+  color: #e5de9e;
 }
 
 button {

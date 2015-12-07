@@ -1,3 +1,7 @@
+h1 {
+  margin-top: 0;
+}
+
 #cryptidlist {
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +15,6 @@
 
 .intro {
   width: 90%;
-  background-color: #BDFFCE;
   padding: 20px;
 }
 
@@ -25,7 +28,6 @@
 
 .newCryptid_form li {
   padding: 12px;
-  border-bottom: 1px solid #B2747B;
   position: relative;
 }
 
@@ -35,7 +37,6 @@
 }
 
 .required_notification {
-  color: #FF353F;
   margin: 5px 0 0 0;
   display: inline;
   float: right;
