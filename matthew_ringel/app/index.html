@@ -2,36 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cryptid Love - A Matchmaking Site for Cryptids</title>
+  <title>Cryptid Match - A Matchmaking Site for Cryptids</title>
+  <link rel="stylesheet" type="text/css" href="styles.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet" type="text/css">
 </head>
 <body data-ng-app="CryptidMatchApp">
+
   <h1>Cryptid Match (eSasquatchHarmony)</h1>
 
-  <main data-ng-controller="CryptidsController" data-ng-init="getAll()">
-		<form name="newCryptidForm" data-ng-submit="create(newCryptid)">
-			<label for="newCryptidName">Name:</label>
-				<input type="text" id="newCryptidName" required data-ng-model="newCryptid.name">
-      <br>
-			<label for="newCryptidSpecies">Species: </label>
-				<input type="text" id="newCryptidSpecies" data-ng-model="newCryptid.species">
-      <br>
-			<label for="newCryptidHabitat">Habitat: </label>
-				<input type="text" id="newCryptidHabitat" data-ng-model="newCryptid.habitat">
-      <br>
-      <label for="newCryptidRabid">Rabid? </label>
-  			<input type="boolean" id="newCryptidRabid" data-ng-model="newCryptid.rabid">
-      <br>
-      <label for="newCryptidDiet">Vegetarian? </label>
-        <input type="boolean" id="newCryptidDiet" data-ng-model="newCryptid.vegetarian">
-      <br>
-      <label for="newCryptidHobbies">Hobbies: </label>
-        <input type="text" id="newCryptidHobbies" data-ng-model="newCryptid.hobbies">
-      <br>
-			<button type="submit" data-ng-disabled="newCryptidForm.$invalid">Create New Cryptid</button>
-		</form>
+  <article class="intro">
+    Tired of wandering the majestic pacific northwest forests alone?  Then this
+    app is for you!  Find your sasquatch mate by creating a profile and
+     searching for matches!  We're open to all cryptids, whether you be a
+     sasquatch, yeti, abominable snowman, bigfoot, or Wendigo.  We don't
+     discriminate based on religion, creed, gender, or fur color.
+  </article>
 
-    <ul id="cryptidlist">
-      <li data-ng-repeat="cryptid in cryptids">Name: {{cryptid.name}}<br>
+
+  <main data-ng-controller="CryptidsController" data-ng-init="getAll()">
+
+		<form class="newCryptid_form" name="newCryptidForm" data-ng-submit="create(newCryptid)">
+      <ul>
+        <li>
+          <h2>New User?  Submit your Profile Here:</h2>
+          <span class="required_notification">* Denotes Required Field</span>
+        </li>
+        <li>
+          <label for="newCryptidName">Name:</label>
+			    <input type="text" id="newCryptidName" required data-ng-model="newCryptid.name">
+        </li>
+        <li>
+			    <label for="newCryptidSpecies">Species: </label>
+			    <input type="text" id="newCryptidSpecies" data-ng-model="newCryptid.species">
+        </li>
+        <li>
+          <label for="newCryptidHabitat">Habitat: </label>
+			    <input type="text" id="newCryptidHabitat" data-ng-model="newCryptid.habitat">
+        </li>
+        <li>
+          <label for="newCryptidRabid">Rabid? </label>
+  		    <input type="boolean" id="newCryptidRabid" data-ng-model="newCryptid.rabid">
+        </li>
+        <li>
+          <label for="newCryptidDiet">Vegetarian? </label>
+          <input type="boolean" id="newCryptidDiet" data-ng-model="newCryptid.vegetarian">
+        </li>
+        <li>
+          <label for="newCryptidHobbies">Hobbies: </label>
+          <input type="text" id="newCryptidHobbies" data-ng-model="newCryptid.hobbies">
+        </li>
+        <li>
+	    		<button type="submit" data-ng-disabled="newCryptidForm.$invalid">Submit</button>
+        </li>
+      </ul>
+    </form>
+
+    <section id="cryptidlist">
+      <div class="profile" data-ng-repeat="cryptid in cryptids">Name: {{cryptid.name}}<br>
         Species: {{cryptid.species}}<br>
         Habitat: {{cryptid.habitat}}<br>
         vegetarian: {{cryptid.vegetarian}}<br>
@@ -66,23 +93,15 @@
         <button type="submit">Submit Update</button>
 
         <button data-ng-click="cryptid.editing = false">Cancel Update </button>
-  </form>
-  <button data-ng-if="!cryptid.editing" data-ng-click = "cryptid.editing = true; cache(cryptid)">Edit this cryptid</button>
+      </form>
+      <button data-ng-if="!cryptid.editing" data-ng-click = "cryptid.editing = true; cache(cryptid)">Edit this cryptid</button>
 
-
-      </li>
-    </ul>
+      </div>
+    </section>
 
   </main>
 
 
-  <article>
-    Tired of wandering the majestic pacific northwest forests alone?  Then this
-    app is for you!  Find your sasquatch mate by creating a profile and
-     searching for matches!  We're open to all cryptids, whether you be a
-     sasquatch, yeti, abominable snowman, bigfoot, or Wendigo.  We don't
-     discriminate based on religion, creed, gender, or fur color.
-  </article>
 
   <script src="bundle.js"></script>
 </body>

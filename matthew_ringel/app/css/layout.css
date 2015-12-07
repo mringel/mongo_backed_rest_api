@@ -1,0 +1,65 @@
+#cryptidlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.profile {
+  padding: 10px;
+}
+
+.intro {
+  width: 90%;
+  background-color: #BDFFCE;
+  padding: 20px;
+}
+
+.newCryptid_form ul {
+  width: 750px;
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0px;
+  padding: 0px;
+}
+
+.newCryptid_form li {
+  padding: 12px;
+  border-bottom: 1px solid #B2747B;
+  position: relative;
+}
+
+.newCryptid_form h2 {
+  margin: 0;
+  display: inline;
+}
+
+.required_notification {
+  color: #FF353F;
+  margin: 5px 0 0 0;
+  display: inline;
+  float: right;
+}
+
+.newCryptid_form label {
+  width: 150px;
+  margin-top: 3px;
+  display: inline-block;
+  float: left;
+  padding: 3px;
+}
+
+.newCryptid_form input {
+  height: 20px;
+  width: 220px;
+  padding: 5px, 9px;
+}
+
+.newCryptid_form textarea {
+  padding: 8px;
+  width: 300px;
+}
+
+.newCryptid_form button {
+  margin-left: 156px;
+}

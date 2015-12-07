@@ -1,0 +1,23 @@
+h1,h2,h3 {
+  font-family: 'Marmelad', sans-serif;
+}
+
+body {
+  background-color: #FFEFF0;
+
+}
+
+h1 {
+  background-color: #17B23F;
+  color: #BDFFCE;
+}
+
+button {
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  color: #FFF;
+  font-size: 18px;
+  background: #17B23F;
+  text-decoration: none;
+}
