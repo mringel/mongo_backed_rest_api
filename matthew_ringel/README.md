@@ -3,6 +3,9 @@
 **29 November, 2015**  
 **sea-d45-javascript**  
 
+**Update 6 December**
+Front end angular code testing is in place with karma and jasmine.
+
 **Update 3 Decemeber**
 Submitted with all functionality now implemented.  Canceling an update reverts to previous values.  Updating a profile will auto-update the list.
 
