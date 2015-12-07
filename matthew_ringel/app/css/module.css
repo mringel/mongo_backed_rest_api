@@ -1,0 +1,52 @@
+/*notes:
+possible colors:
+dark almost black: #090401
+off-white: #e5de9e
+leaf brown: #5d1900
+forest green: #0d3600
+mushroom cap red: #e92300
+
+*/
+
+input {
+  background-color: #5d1900;
+  border-color: #e5de9e;
+}
+
+label span, .required_notification {
+  color: #e92300;
+  font-weight: bold;
+}
+
+.newCryptid_form li {
+  border-bottom: 1px solid #5d1900;
+}
+
+.intro {
+  background-color: #5d1900;
+}
+
+h1,h2,h3 {
+  font-family: 'Marmelad', sans-serif;
+}
+
+body {
+  background-color: #090401;
+  color: #e5de9e;
+}
+
+h1 {
+  background-color: #0d3600;
+  color: #e5de9e;
+}
+
+button {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: #e5de9e;
+  font-size: 18px;
+  background: #0d3600;
+  text-decoration: none;
+  border-color: #e5de9e;
+}

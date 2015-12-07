@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 var webpack = require('webpack-stream');
+var minifyCss = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
+var gulpWatch = require('gulp-watch');
 
 gulp.task('static:dev', function() {
   gulp.src('app/**/*.html')
@@ -24,6 +27,21 @@ gulp.task('webpack:test', function() {
     }
   }))
   .pipe(gulp.dest('test/client/'));
+});
+
+gulp.task('css:dev', function() {
+  return gulp.src([
+    'app/css/base.css',
+    'app/css/layout.css',
+    'app/css/module.css',
+    'app/css/state.css'])
+    .pipe(concatCss('styles.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('build/'));
+});
+
+gulp.task('css:watch', function() {
+  gulp.watch('./app/css/**/*.css', ['css:dev']);
 });
 
 gulp.task('build:dev', ['webpack:dev', 'static:dev']);
