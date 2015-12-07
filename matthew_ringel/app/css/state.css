@@ -13,3 +13,18 @@ button:hover {
   background: #1ac745;
   text-decoration: none;
 }
+
+.form_hint {
+    background: #e92300;
+    border-radius: 3px 3px 3px 3px;
+    color: #e5de9e;
+    margin-left:8px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+
+.newCryptid_form input:focus + .form_hint {
+  display: inline;
+}

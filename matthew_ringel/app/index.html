@@ -28,7 +28,7 @@
           <span class="required_notification">* Denotes Required Field</span>
         </li>
         <li>
-          <label for="newCryptidName">Name:</label>
+          <label for="newCryptidName"><span>*</span>Name:</label>
 			    <input type="text" id="newCryptidName" required data-ng-model="newCryptid.name">
         </li>
         <li>
@@ -42,14 +42,18 @@
         <li>
           <label for="newCryptidRabid">Rabid? </label>
   		    <input type="boolean" id="newCryptidRabid" data-ng-model="newCryptid.rabid">
+          <span class="form_hint">Proper format: "true" or "false"</span>
         </li>
         <li>
           <label for="newCryptidDiet">Vegetarian? </label>
           <input type="boolean" id="newCryptidDiet" data-ng-model="newCryptid.vegetarian">
+          <span class="form_hint">Proper format: "true" or "false"</span>
         </li>
         <li>
           <label for="newCryptidHobbies">Hobbies: </label>
           <input type="text" id="newCryptidHobbies" data-ng-model="newCryptid.hobbies">
+          <span class="form_hint">Proper format "jazz, hiking, photography"</span>
+
         </li>
         <li>
 	    		<button type="submit" data-ng-disabled="newCryptidForm.$invalid">Submit</button>
