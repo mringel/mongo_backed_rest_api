@@ -1,7 +1,8 @@
 module.exports = function(app) {
   app.controller('CryptidsController', ['$scope', '$http', function($scope, $http) {
     $scope.cryptids = [];
-    $scope.newCryptid = null;
+    $scope.defaults = {habitat: 'forest', rabid: false, vegetarian: true, single: true, partner: null};
+    $scope.newCryptid = angular.copy($scope.defaults);
     $scope.errors = [];
     $scope.updatedCryptid = null;
 
@@ -15,11 +16,14 @@ module.exports = function(app) {
     };
 
     $scope.create = function(cryptid) {
-      cryptid.hobbies = cryptid.hobbies.split(',');
+      if (typeof cryptid.hobbies == 'string') {
+        cryptid.hobbies = cryptid.hobbies.split(',');
+      }
+
       $http.post('/api/cryptids', cryptid)
       .then(function(res) {
           $scope.cryptids.push(res.data);
-          $scope.newCryptid = null;
+          $scope.newCryptid = angular.copy($scope.defaults);
       }, function(err) {
         console.log(err.data);
       });
