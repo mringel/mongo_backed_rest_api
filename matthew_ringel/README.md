@@ -3,6 +3,12 @@
 **29 November, 2015**  
 **sea-d45-javascript**  
 
+**Update 8 December**  
+Changed css over to Sass .scss.  Sass is mapped, minified and imported into one application.css file during webpack build.
+
+**Update 7 December**  
+Added css styling to app in base, module, layout, and state css files.  Css is concatenated and minified during webpack build.
+
 **Update 6 December**
 Front end angular code testing is in place with karma and jasmine.
 
