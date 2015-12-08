@@ -1,0 +1,106 @@
+@import "base";
+@import "layout";
+
+
+/*notes:
+possible colors:
+dark almost black: #090401
+off-white: #e5de9e
+leaf brown: #5d1900
+forest green: #0d3600
+mushroom cap red: #e92300
+*/
+
+$almostblack: #090401;
+$offwhite: #e5de9e;
+$leafbrown: #5d1900;
+$forestgreen: #0d3600;
+$mushroomcapred: #e92300;
+
+$textcolor: $offwhite;
+$mainbackgroundcolor: $almostblack;
+$brightaccent: $mushroomcapred;
+$focusbackground: $leafbrown;
+$focusborder: $offwhite;
+$maindivider: $leafbrown;
+$mediumaccent: $forestgreen;
+
+// $font-serif:
+$font-sans: 'Marmelad', sans-serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+input {
+  background-color: $focusbackground;
+  border-color: $focusborder;
+}
+
+label span, .required_notification {
+  color: $brightaccent;
+  font-weight: bold;
+}
+
+.newCryptid_form li {
+  border-bottom: 1px solid $maindivider;
+}
+
+.intro {
+  background-color: $focusbackground;
+}
+
+h1,h2,h3 {
+  font: $font-sans;
+}
+
+body {
+  background-color: $mainbackgroundcolor;
+  color: $textcolor;
+}
+
+h1 {
+  background-color: $mediumaccent;
+  color: $textcolor;
+}
+
+button {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  color: $textcolor;
+  font-size: 18px;
+  background: $mediumaccent;
+  text-decoration: none;
+  border-color: $focusborder;
+  margin: 5px;
+}
+
+button:hover {
+  background: #1ac745;
+  text-decoration: none;
+}
+
+.form_hint {
+    background: $brightaccent;
+    border-radius: 3px 3px 3px 3px;
+    color: $textcolor;
+    margin-left:8px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+
+.newCryptid_form input:focus + .form_hint {
+  display: inline;
+}
+
+.profile {
+  background-color: $focusbackground;
+  margin: 20px;
+  @include border-radius(3px);
+}
