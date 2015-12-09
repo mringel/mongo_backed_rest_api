@@ -4,7 +4,7 @@
 **sea-d45-javascript**  
 
 **Update 9 December**  
-Added some advnaced sass features just to play around with them.  (mixins, color operations, list maps)
+Added some advanced sass features just to play around with them.  (mixins, color operations, list maps)
 
 **Update 8 December**  
 Changed css over to Sass .scss.  Sass is mapped, minified and imported into one application.css file during webpack build.
