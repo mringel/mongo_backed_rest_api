@@ -1,3 +1,5 @@
+@import "config";
+@import "mixins";
 @import "base";
 @import "layout";
 
@@ -11,29 +13,7 @@ forest green: #0d3600
 mushroom cap red: #e92300
 */
 
-$almostblack: #090401;
-$offwhite: #e5de9e;
-$leafbrown: #5d1900;
-$forestgreen: #0d3600;
-$mushroomcapred: #e92300;
 
-$textcolor: $offwhite;
-$mainbackgroundcolor: $almostblack;
-$brightaccent: $mushroomcapred;
-$focusbackground: $leafbrown;
-$focusborder: $offwhite;
-$maindivider: $leafbrown;
-$mediumaccent: $forestgreen;
-
-// $font-serif:
-$font-sans: 'Marmelad', sans-serif;
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
 
 input {
   background-color: $focusbackground;
@@ -71,18 +51,19 @@ button {
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
   border-radius: 3px;
-  color: $textcolor;
+  color: map-get($buttonmap, button-text);
   font-size: 18px;
-  background: $mediumaccent;
+  background: map-get($buttonmap, button-background);
   text-decoration: none;
-  border-color: $focusborder;
+  border-color: map-get($buttonmap, button-border);
   margin: 5px;
 }
 
-button:hover {
-  background: #1ac745;
-  text-decoration: none;
-}
+// input[disabled] {
+//   background-color: map-get($input, disabled-background);
+//   border-color: map-get($input, disabled-border);
+//   color: map-get($input, disabled-text);
+// }
 
 .form_hint {
     background: $brightaccent;
@@ -101,6 +82,6 @@ button:hover {
 
 .profile {
   background-color: $focusbackground;
-  margin: 20px;
-  @include border-radius(3px);
+  @include default-box;
+  border: 3px solid $focusborder;
 }
