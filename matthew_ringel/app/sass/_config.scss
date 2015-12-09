@@ -1,0 +1,32 @@
+
+// Primary Colors
+// -------------------
+$almostblack: #090401;
+$offwhite: #e5de9e;
+$leafbrown: #5d1900;
+$forestgreen: #0d3600;
+$mushroomcapred: #e92300;
+
+// Derivative Colors
+// -----------------------
+$light-green: lighten($forestgreen, 15%);
+$light-black: lighten($almostblack, 6.667%);
+
+// Color Palette
+// -------------------------
+$textcolor: $offwhite;
+$mainbackgroundcolor: $light-black;
+$brightaccent: $mushroomcapred;
+$focusbackground: $leafbrown;
+$focusborder: $offwhite;
+$maindivider: $leafbrown;
+$mediumaccent: $forestgreen;
+
+// $font-serif:
+$font-sans: 'Marmelad', sans-serif;
+
+$buttonmap: (
+  button-background: $mediumaccent,
+  button-border: $focusborder,
+  button-text: $textcolor
+);
