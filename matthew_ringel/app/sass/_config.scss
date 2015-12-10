@@ -6,6 +6,7 @@ $offwhite: #e5de9e;
 $leafbrown: #5d1900;
 $forestgreen: #0d3600;
 $mushroomcapred: #e92300;
+$paper-white: #EFE9CF;
 
 // Derivative Colors
 // -----------------------
@@ -14,11 +15,12 @@ $light-black: lighten($almostblack, 6.667%);
 
 // Color Palette
 // -------------------------
-$textcolor: $offwhite;
-$mainbackgroundcolor: $light-black;
+$textcolor: $light-black;
+$alt-text-color: $paper-white;
+$mainbackgroundcolor: $paper-white;
 $brightaccent: $mushroomcapred;
-$focusbackground: $leafbrown;
-$focusborder: $offwhite;
+$focusbackground: $offwhite;
+$focusborder: $forestgreen;
 $maindivider: $leafbrown;
 $mediumaccent: $forestgreen;
 
@@ -28,5 +30,5 @@ $font-sans: 'Marmelad', sans-serif;
 $buttonmap: (
   button-background: $mediumaccent,
   button-border: $focusborder,
-  button-text: $textcolor
+  button-text: $offwhite
 );
