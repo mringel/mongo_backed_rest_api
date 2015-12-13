@@ -9,19 +9,21 @@
 <body data-ng-app="CryptidMatchApp">
 
   <h1>Cryptid Match (eSasquatchHarmony)</h1>
+  <div class="intro" data-text-box data-heading="Welcome!"
+    <p>
+      Tired of wandering the majestic pacific northwest forests alone?  Then this
+      app is for you!  Find your sasquatch mate by creating a profile and
+      searching for matches!  We're open to all cryptids, whether you be a
+      sasquatch, yeti, abominable snowman, bigfoot, or Wendigo.  We don't
+      discriminate based on religion, creed, gender, or fur color.
+    </p>
+  </div>
 
-  <article class="intro">
-    Tired of wandering the majestic pacific northwest forests alone?  Then this
-    app is for you!  Find your sasquatch mate by creating a profile and
-     searching for matches!  We're open to all cryptids, whether you be a
-     sasquatch, yeti, abominable snowman, bigfoot, or Wendigo.  We don't
-     discriminate based on religion, creed, gender, or fur color.
-  </article>
 
 
   <main data-ng-controller="CryptidsController" data-ng-init="getAll()">
 
-    <div data-cryptid-form-directive
+    <div class="newCryptid_form" data-cryptid-form-directive
       data-button-text="Create New Cryptid Profile"
       data-form-name="newCryptidForm"
       data-heading-text="New User? Create a Profile Below!"

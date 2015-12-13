@@ -1,3 +1,3 @@
 module.exports = function(app) {
-  require('./dummy_directive')(app);
+  require('./text_box')(app);
 };
