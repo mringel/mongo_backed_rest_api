@@ -1,0 +1,41 @@
+<div>
+  <form name="{{formName}}" data-ng-submit="action({cryptid: cryptid})">
+    <ul>
+      <li>
+        <h2>{{headingText}}</h2>
+        <span class="required_notification">* Denotes Required Field  </span>
+      </li>
+      <li>
+        <label for="cryptidName"><span>*</span>Name:</label>
+        <input type="text" id="cryptidName" required data-ng-model="cryptid.name">
+      </li>
+      <li>
+        <label for="cryptidSpecies">Species: </label>
+        <input type="text" id="cryptidSpecies" data-ng-model="cryptid.species">
+      </li>
+      <li>
+        <label for="cryptidHabitat">Habitat: </label>
+        <input type="text" id="cryptidHabitat" data-ng-model="cryptid.habitat"  >
+      </li>
+      <li>
+        <label for="cryptidRabid">Rabid? </label>
+        <input type="boolean" id="cryptidRabid" data-ng-model="cryptid.rabid">
+        <span class="form_hint">Proper format: "true" or "false"</span>
+      </li>
+      <li>
+        <label for="cryptidDiet">Vegetarian? </label>
+        <input type="boolean" id="cryptidDiet" data-ng-model="cryptid.vegetarian">
+        <span class="form_hint">Proper format: "true" or "false"</span>
+      </li>
+      <li>
+        <label for="cryptidHobbies">Hobbies: </label>
+        <input type="text" id="cryptidHobbies" data-ng-model="cryptid.hobbies">
+        <span class="form_hint">Proper format "jazz, hiking, photography"</span>
+
+      </li>
+      <li>
+        <button type="submit" data-ng-disabled="newCryptidForm.$invalid">Submit</button>
+      </li>
+    </ul>
+  </form>
+</div>
