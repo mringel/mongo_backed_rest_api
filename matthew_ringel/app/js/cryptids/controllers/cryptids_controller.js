@@ -9,6 +9,22 @@ module.exports = function(app) {
       return dummyResource.findRabid(cryptid);
     };
 
+    $scope.test = function() {
+      console.log("this is a test!");
+    };
+
+    $scope.sortByKey = function(array, key) {
+      array.sort(function(a,b) {
+        if (a[key] < b[key]) {
+          return -1;
+        }
+        if (a[key] > b[key]) {
+          return 1;
+        }
+        return 0;
+      });
+    };
+
     $scope.rabidView = function(cryptid) {
       $scope.errors.push(rabidCheck(cryptid));
     };

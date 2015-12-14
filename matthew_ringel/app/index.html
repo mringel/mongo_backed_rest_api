@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="http://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet" type="text/css">
   <meta charset="UTF-8">
   <title>Cryptid Match - A Matchmaking Site for Cryptids</title>
   <link rel="stylesheet" type="text/css" href="application.css">
-  <link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet" type="text/css">
 </head>
 <body data-ng-app="CryptidMatchApp">
+  <header>
+    <h1>Cryptid Match (eSasquatchHarmony)</h1>
+  </header>
 
-  <h1>Cryptid Match (eSasquatchHarmony)</h1>
   <div class="intro" data-text-box data-heading="Welcome!"
     <p>
       Tired of wandering the majestic pacific northwest forests alone?  Then this
@@ -31,7 +33,29 @@
       data-action="create(cryptid)">
     </div>
 
+    <div data-action-button
+      data-button-text="Sort Alphabetical by Name"
+      data-cryptids="cryptids"
+      data-key="name"
+      data-action="sortByKey">
+    </div>
+
+      <div data-action-button
+        data-button-text="Sort Alphabetical by habitat"
+        data-cryptids="cryptids"
+        data-key="habitat"
+        data-action="sortByKey">
+      </div>
+
+    <div data-action-button
+      data-button-text="Sort Alphabetical by species"
+      data-cryptids="cryptids"
+      data-key="species"
+      data-action="sortByKey">
+    </div>
+
     <section id="cryptidlist">
+
       <div class="profile" data-ng-repeat="cryptid in cryptids">Name: {{cryptid.name}}<br>
         Species: {{cryptid.species}}<br>
         Habitat: {{cryptid.habitat}}<br>

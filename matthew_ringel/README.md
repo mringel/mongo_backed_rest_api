@@ -1,7 +1,15 @@
-# Single Resource REST API
+# Cryptid Match (aka eSasquatchHarmony)
 **Matthew Ringel**  
-**29 November, 2015**  
 **sea-d45-javascript**  
+
+**Update 13 December**  
+Added:
+
+- A service for querying an individual cryptid to see if it is rabid or not.  Simple and not very useful, but it's a service and it works.  Currently not set up to output to the DOM, it just appends to the error array.
+
+- A simple text_box directive that uses transclusion to turn a ```<p>``` into an article with a heading.  Again, not very useful, but more structure could be added to the template to turn the text_box into a reusable building block.  This directive is currently used for the intro text block.
+
+- A function passing directive that creates a button that calls the function being passed to it.  Three uses of the directive are in the code now, where a sort function is passed through the button to allow sorting on different keys in the cryptid model; name, species, and habitat.  A different function could be passed to, for example, reverse sort or find all the cryptids that match a certain key, value pair or something.
 
 **Update 9 December**  
 Added some advanced sass features just to play around with them.  (mixins, color operations, list maps)
