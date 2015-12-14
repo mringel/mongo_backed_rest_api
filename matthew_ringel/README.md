@@ -5,6 +5,8 @@
 **Update 13 December**  
 Added:
 
+- a basic directive for making a form to add a new cryptid (which could potentially be used for updating as well, but this isn't implemented yet).
+
 - A service for querying an individual cryptid to see if it is rabid or not.  Simple and not very useful, but it's a service and it works.  Currently not set up to output to the DOM, it just appends to the error array.
 
 - A simple text_box directive that uses transclusion to turn a ```<p>``` into an article with a heading.  Again, not very useful, but more structure could be added to the template to turn the text_box into a reusable building block.  This directive is currently used for the intro text block.
