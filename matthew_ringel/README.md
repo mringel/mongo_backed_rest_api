@@ -1,7 +1,18 @@
-# Single Resource REST API
+# Cryptid Match (aka eSasquatchHarmony)
 **Matthew Ringel**  
-**29 November, 2015**  
 **sea-d45-javascript**  
+
+**Update 13 December**  
+
+- Added a basic directive for making a form to add a new cryptid (which could potentially be used for updating as well, but this isn't implemented yet).
+
+- Added a service for querying an individual cryptid to see if it is rabid or not.  Simple and not very useful, but it's a service and it works.  Currently not set up to output to the DOM, it just appends to the error array.
+
+- Added a simple text_box directive that uses transclusion to turn a ```<p>``` into an article with a heading.  Again, not very useful, but more structure could be added to the template to turn the text_box into a reusable building block.  This directive is currently used only for the intro text block.
+
+- Added a function passing directive that creates a button that calls the function being passed to it.  Three uses of the directive are in the code now, where a sort function is passed through the button to allow sorting on different keys in the cryptid model; name, species, and habitat.  A different function could be passed to, for example, reverse sort or find all the cryptids that match a certain key, value pair or something.  Pattern for passing a function was borrowed from http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-3-isolate-scope-and-function-parameters
+
+- Added an additional test for the service.
 
 **Update 9 December**  
 Added some advanced sass features just to play around with them.  (mixins, color operations, list maps)
@@ -39,6 +50,9 @@ If a cryptid sees someone in the database they think they might be a match with 
 
 
 ## Citations
+
+Function passing tutorial that I used for my Angular function passing directive (especially method 2):
+http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-3-isolate-scope-and-function-parameters
 
 MongoDB validation as suggested here (method 3):  
 http://nraj.tumblr.com/post/38706353543/handling-uniqueness-validation-in-mongomongoose

@@ -1,10 +1,33 @@
 module.exports = function(app) {
-  app.controller('CryptidsController', ['$scope', '$http', function($scope, $http) {
+  app.controller('CryptidsController', ['$scope', '$http', 'dummyResource', function($scope, $http, dummyResource) {
     $scope.cryptids = [];
     $scope.defaults = {habitat: 'forest', rabid: false, vegetarian: true, single: true, partner: null};
     $scope.newCryptid = angular.copy($scope.defaults);
     $scope.errors = [];
     $scope.updatedCryptid = null;
+    var rabidCheck = function(cryptid) {
+      return dummyResource.findRabid(cryptid);
+    };
+
+    $scope.test = function() {
+      console.log("this is a test!");
+    };
+
+    $scope.sortByKey = function(array, key) {
+      array.sort(function(a,b) {
+        if (a[key] < b[key]) {
+          return -1;
+        }
+        if (a[key] > b[key]) {
+          return 1;
+        }
+        return 0;
+      });
+    };
+
+    $scope.rabidView = function(cryptid) {
+      $scope.errors.push(rabidCheck(cryptid));
+    };
 
     $scope.getAll = function() {
       $http.get('/api/cryptids')

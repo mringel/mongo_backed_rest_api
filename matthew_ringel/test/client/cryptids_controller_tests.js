@@ -65,4 +65,5 @@ describe('cryptids controller', function() {
       expect($scope.cryptids.length).toBe(2);
     });
   });
+
 });

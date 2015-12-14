@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
+	__webpack_require__(13);
 
 
 /***/ },
@@ -52,7 +53,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(2);
-	__webpack_require__(6);
+	__webpack_require__(12);
 
 	describe('cryptids controller', function() {
 	  var $httpBackend;
@@ -118,6 +119,7 @@
 	      expect($scope.cryptids.length).toBe(2);
 	    });
 	  });
+
 	});
 
 
@@ -130,6 +132,10 @@
 
 	var cryptidMatchApp = angular.module('CryptidMatchApp', []);
 	__webpack_require__(4)(cryptidMatchApp);
+	__webpack_require__(6)(cryptidMatchApp);
+
+
+	__webpack_require__(9)(cryptidMatchApp);
 
 
 /***/ },
@@ -29169,12 +29175,111 @@
 /***/ function(module, exports) {
 
 	module.exports = function(app) {
-	  app.controller('CryptidsController', ['$scope', '$http', function($scope, $http) {
+	  app.service('dummyResource', function() {
+	    this.findRabid = function(cryptid) {
+	      return cryptid.rabid;
+	    };
+	  });
+	};
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+	  __webpack_require__(7)(app);
+	  __webpack_require__(8)(app);
+	};
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.directive('textBox', function() {
+	    return {
+	      restrict: 'AC',
+	      templateUrl: '/templates/text_box_directive.html',
+	      transclude: true,
+	      scope: {
+	        heading: '@'
+	      }
+	    };
+	  });
+	};
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.directive('actionButton', function() {
+	    return {
+	      restrict: 'AC',
+	      templateUrl: '/templates/action_button_directive.html',
+	      scope: {
+	        action: '&',
+	        buttonText: '@',
+	        cryptids: '=',
+	        key: '@'
+	      },
+	      controller: function($scope) {
+	        $scope.doAction = function() {
+	          $scope.action()($scope.cryptids, $scope.key);
+	        };
+	      }
+	    };
+	  });
+	};
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = function(app) {
+	  __webpack_require__(10)(app);
+	  __webpack_require__(11)(app);
+	};
+
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.controller('CryptidsController', ['$scope', '$http', 'dummyResource', function($scope, $http, dummyResource) {
 	    $scope.cryptids = [];
 	    $scope.defaults = {habitat: 'forest', rabid: false, vegetarian: true, single: true, partner: null};
 	    $scope.newCryptid = angular.copy($scope.defaults);
 	    $scope.errors = [];
 	    $scope.updatedCryptid = null;
+	    var rabidCheck = function(cryptid) {
+	      return dummyResource.findRabid(cryptid);
+	    };
+
+	    $scope.test = function() {
+	      console.log("this is a test!");
+	    };
+
+	    $scope.sortByKey = function(array, key) {
+	      array.sort(function(a,b) {
+	        if (a[key] < b[key]) {
+	          return -1;
+	        }
+	        if (a[key] > b[key]) {
+	          return 1;
+	        }
+	        return 0;
+	      });
+	    };
+
+	    $scope.rabidView = function(cryptid) {
+	      $scope.errors.push(rabidCheck(cryptid));
+	    };
 
 	    $scope.getAll = function() {
 	      $http.get('/api/cryptids')
@@ -29233,7 +29338,30 @@
 
 
 /***/ },
-/* 6 */
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = function(app) {
+	  app.directive('cryptidFormDirective', function() {
+	    return {
+	      restrict: 'AC',
+	      replace: true,
+	      templateUrl: 'templates/cryptid_form_template.html',
+	      transclude: true,
+	      scope: {
+	        buttonText: '@',
+	        headingText: '@',
+	        formName: '@',
+	        cryptid: '=',
+	        action: '&'
+	      }
+	    };
+	  });
+	};
+
+
+/***/ },
+/* 12 */
 /***/ function(module, exports) {
 
 	/**
@@ -31707,6 +31835,26 @@
 
 
 	})(window, window.angular);
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	describe('dummyResource service', function() {
+
+	  var dummyResource;
+
+	  beforeEach(angular.mock.module('CryptidMatchApp'));
+	  beforeEach(angular.mock.inject(function(_dummyResource_) {
+	    dummyResource = _dummyResource_;
+	  }));
+
+	  it('should return the rabid state of a cryptid', function() {
+	    var testCryptid = {rabid: true};
+	    expect(dummyResource.findRabid(testCryptid)).toBe(true);
+	  });
+	});
 
 
 /***/ }
